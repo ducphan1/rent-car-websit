@@ -1,0 +1,154 @@
+.form-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  margin-top: -80px;
+  margin-left: 130px;
+}
+
+.form-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+
+.form-fields {
+  display: flex;
+  gap: 20px;
+}
+
+.field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+}
+
+.field select {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+  outline: none;
+}
+
+.switch-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.switch-icon button {
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  outline: none;
+}
+
+.switch-icon button:hover {
+  background-color: #357ac8;
+}
+
+@media only screen and (max-width: 576px) {
+  .form-container{
+    margin-top: 0px;
+    width: 430px;
+    margin-left: -15px;
+  }
+  
+  .form-section {
+    flex-direction: column; 
+    align-items: center; 
+    gap: 15px; 
+    padding: 10px; 
+    width: 80%;
+  }
+
+  .form-card {
+    width: 80%; 
+    max-width: 300px; 
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+
+  .form-header {
+    font-size: 14px; 
+    margin-bottom: 10px; 
+  }
+
+  .form-fields {
+    flex-direction: column; 
+    gap: 10px; 
+  }
+
+  .field {
+    width: 100%; 
+  }
+
+  .field label {
+    font-size: 12px; 
+    margin-bottom: 5px; 
+  }
+
+  .field select {
+    padding: 8px;
+    font-size: 12px; 
+    height: auto; 
+  }
+
+  .switch-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .switch-icon button {
+    width: 40px; 
+    height: 40px;
+    font-size: 18px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+}

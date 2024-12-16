@@ -1,0 +1,99 @@
+.car-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-wrap: nowrap;
+  }
+  
+  .car-card-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .car-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .car-type {
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+  .car-favorite {
+    font-size: 1.2rem;
+    color: red;
+    cursor: pointer;
+  }
+  
+  .car-image img {
+    width: 100%;
+    height: 100%;
+    max-height: 120px;
+    object-fit: cover;
+   margin-bottom: 20px;
+  }
+  
+  
+  .car-details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 15px 0;
+  }
+  
+  .detail {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .icon {
+    color: #555;
+    font-size: 1.1rem;
+  }
+  
+  .car-card-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .car-price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .rent-now-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  
+  .rent-now-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  @media only screen and (max-width: 576px) {
+    .car-card{
+      text-wrap: nowrap;
+    }
+    
+}

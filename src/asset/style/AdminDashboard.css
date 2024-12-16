@@ -1,0 +1,378 @@
+
+
+
+.admin-dashboard {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 250px;
+    height: 850px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 70px;
+    margin-top: 0px;
+    width: 260px;
+
+
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+
+}
+
+.menu ul li {
+    display: flex;
+    align-items: center;
+    width: 120px;
+    border-radius: 8px;
+    height: 28px;
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    padding: 10px 20px;
+    margin: 5px 0;
+    color: #555;
+    text-align: justify;
+    letter-spacing: -0.02em;
+    text-wrap: nowrap;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.menu ul li .menu-icon {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.menu ul li.active,
+.menu ul li:hover {
+    background-color: #4e89ff;
+    color: #fff;
+}
+
+.preferences p {
+    margin-top: -200px;
+
+    width: 112px;
+    height: 16px;
+
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 15px;
+
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    letter-spacing: -0.02em;
+
+    color: rgba(148, 167, 203, 0.4);
+
+}
+
+.preferences ul li {
+    margin-top: -10px;
+    width: 72px;
+    height: 28px;
+    cursor: pointer;
+    text-wrap: nowrap;
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    margin-top: 20px;
+    display: flex;
+    margin-left: -20px;
+    align-items: center;
+    text-align: justify;
+    letter-spacing: -0.02em;
+
+
+    color: #90A3BF;
+}
+
+.preferences ul li .menu-icon {
+    margin-right: 10px;
+}
+
+.preferences ul li:hover {
+    color: #4e89ff;
+}
+
+.logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 20px 0;
+    background-color: #d9534f;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.logout .menu-icon {
+    margin-right: 8px;
+}
+
+.logout:hover {
+    background-color: #c9302c;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.map-section {
+    width: 500px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: 30px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.map-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.map-container {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.top-row {
+    display: flex;
+    gap: 20px;
+    width: 500px;
+}
+
+.details-rental1 {
+    height: 402px;
+    width: 500px ;
+    flex: 1;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 5px;
+    margin-left: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chart-section {
+    position: absolute;
+    flex: 1;
+    width: 540px;
+    height: 360px;
+    margin-top: -422px;
+    margin-left: 600px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.details-rental1 h2,
+.chart-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    width: 500px;
+}
+
+.rental-card1 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 500px;
+}
+
+.car-image {
+    width: 100px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.rental-info1 h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.rental-info1 p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.rental-dates {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.rental-dates h4 {
+    font-size: 14px;
+    margin: 0;
+}
+
+.total-price1 {
+    display: flex;
+    margin-top: 210px;
+    text-align: right;
+    width: 200px;
+}
+
+.total-price11 p {
+    width: 200px;
+    height: 24px;
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.03em;
+
+    color: #1A202C;
+}
+
+.total-price1 h4 {
+    position: absolute;
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.02em;
+    color: #90A3BF;
+}
+
+.total-price1 h3 {
+    position: absolute;
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    margin-left: 370px;
+    margin-top: 40px;
+    color: #1A202C;
+}
+
+.chart {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.chart ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 40px;
+}
+
+.chart ul li {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.chart-graphic {
+    font-size: 2em;
+}
+
+
+.recent-transactions1 {
+    width: 540px;
+    height: 402px;
+    margin-top: 446px;
+    margin-left: 600px;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.recent-transactions1 h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.recent-transactions1 ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.transaction-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.transaction-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.transaction-item h4 {
+    margin: 0;
+    margin-left: 50px;
+    font-size: 14px;
+    color: #333;
+}
+
+.transaction-item p {
+    margin: 0;
+    font-size: 12px;
+    color: #666;
+    margin-left: 50px;
+}
+

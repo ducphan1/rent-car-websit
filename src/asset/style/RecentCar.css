@@ -1,0 +1,39 @@
+.view-all-btn{
+    position: absolute;
+    margin-left: 1380px;
+    margin-top: -20px;
+    
+}
+
+.popular-cars1 h2{
+    margin-left: 65px;
+}
+
+.popular-cars2 h2{
+    margin-left: 65px;
+    margin-top: -20px;
+}
+
+
+@media only screen and (max-width: 576px) {
+    .popular-cars1{
+        margin-left: 90px;
+    }
+
+    .popular-cars1 .car-card{
+        max-width: 400px;
+        width: 100%;
+
+    }
+
+    .popular-cars2{
+        margin-left: 90px;
+    }
+
+    .popular-cars2 .car-card{
+        max-width: 400px;
+        width: 100%;
+
+    }
+
+}

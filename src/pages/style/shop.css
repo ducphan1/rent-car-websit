@@ -1,0 +1,92 @@
+body{
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+.myshop .form-container{
+    margin-top: 10px;
+    width: 50%;
+    background-color: transparent;
+    margin-left: 320px;
+}
+
+.myshop .form-section{
+    background-color: transparent;
+    
+    box-shadow: none;
+}
+.myshop .car-list-container{
+    width: 100%;
+    margin-left: 160px;
+    margin-top: -50px;
+}
+
+.myshop .form-card{
+    width: 100%;
+}
+.myshop .car-grid{
+    width: auto;
+    
+}
+
+.myshop .recommendation-cars{
+    width: 84%;
+    
+    
+    margin-top: -50px;
+}
+
+.myshop .car-grid1{
+    overflow-x: hidden;
+}
+
+
+.myshop .popular-cars h2{
+    margin-left: 160px;
+}
+
+.myshop .car-list-container h2{
+    margin-left: 160px;
+}
+
+.myshop .detail{
+    text-wrap: nowrap;
+}
+
+.myshop .show-more-btn{
+    margin-left: 200px;
+}
+
+@media only screen and (max-width: 576px) {
+
+    .myshop .main{
+    
+        margin-left: 50px;
+    }
+
+    
+    .myshop .form-container{
+        margin-left: -220px;
+        width: 80%;
+        margin-bottom: -20px;
+    }
+
+    .myshop .car-list-container{
+        margin-left: -120px;
+    }
+
+    .myshop .recommendation-cars h2{
+        text-wrap: nowrap;
+    }
+
+    .myshop .car-grid1{
+        width: 100%;
+        margin-left: -210px;
+    }
+
+    .myshop .show-more-btn{
+        margin-left: 70px;
+        text-wrap: nowrap;
+    }
+}

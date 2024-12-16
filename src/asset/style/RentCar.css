@@ -1,0 +1,145 @@
+.rent-car-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f8f9fa;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 200px;
+  margin-left: 140px;
+}
+
+.left-section {
+  flex: 2;
+}
+
+.right-section {
+  flex: 1;
+}
+
+.section {
+  background: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+  font-size: 20px;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.section p {
+  font-size: 14px;
+  color: #666666;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.form-group input,
+.form-group select {
+  flex: 1 1 calc(50% - 10px);
+  padding: 10px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.rental-option {
+  flex: 1 1 calc(50% - 10px);
+}
+
+.rental-option label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #333333;
+}
+
+.credit-card-info input {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.rent-now-button {
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.rent-now-button:hover {
+  background-color: #0056b3;
+}
+
+.data-safe {
+  font-size: 12px;
+  color: #666666;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.rental-summary {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.rental-summary h3 {
+  font-size: 18px;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.rental-summary img {
+  width: 100%;
+  max-width: 150px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.rental-summary .summary-details {
+  font-size: 14px;
+  color: #666666;
+}
+
+.rental-summary .total-price {
+  font-size: 18px;
+  color: #333333;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.rental-summary button {
+  margin-top: 15px;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.rental-summary button:hover {
+  background-color: #218838;
+}

@@ -1,0 +1,188 @@
+.car-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 32px;
+  width: 100%;
+}
+
+.car-list-container h2 {
+  font-size: 1.5rem;
+
+  margin-bottom: 50px;
+  color: #333;
+  margin-left: 150px;
+}
+
+.car-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  margin-left: 150px;
+  justify-content: space-between;
+  width: 92%;
+  overflow-x: none;
+  text-wrap: nowrap;
+}
+
+.car-grid1 {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-left: 150px;
+  justify-content: space-between;
+  width: 93%;
+  overflow-x: auto;
+  margin-top: 50px;
+  text-wrap: nowrap;
+}
+
+.popular-cars .car-grid {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.recommendation-cars .car-grid1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.popular-cars {
+  margin-bottom: 100px;
+}
+
+.recommendation-cars {
+  margin-bottom: 20px;
+  margin-top: -50px;
+  width: 100%;
+}
+
+.recom h2 {
+  margin-top: 40px;
+}
+
+.show-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.view-all {
+  position: absolute;
+
+  display: flex;
+  margin-top: -35px;
+  margin-left: 1180px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px;
+  gap: 8px;
+  width: 204px;
+
+
+
+}
+
+.view-all-btn {
+
+
+  height: 24px;
+  border: none;
+  background-color: transparent;
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #3563E9;
+
+
+
+
+}
+
+.show-more-btn {
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.show-more-btn:hover {
+  background-color: #0056b3;
+}
+
+.pagination-controls{
+  display: flex;
+  margin-top: 30px;
+  margin-left: 660px;
+  gap: 40px;
+}
+@media only screen and (max-width: 576px) {
+  .car-list-container {
+    padding: 0 10px;
+    margin-left: -105px;
+  }
+
+  .car-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    overflow-x: hidden;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+  }
+
+
+  .recommendation-cars .car-grid1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+    margin-left: -225px;
+
+    padding: 0 10px;
+  }
+
+  .recommendation-cars .car-card {
+    width: 100%;
+    max-width: 325px;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .car-card .rental-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .view-all {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+
+    margin-left: 310px;
+  }
+
+  .view-all-btn {
+    font-size: 14px;
+  }
+
+  .show-more {
+    margin-top: 20px;
+    margin-left: 180px;
+  }
+
+}
