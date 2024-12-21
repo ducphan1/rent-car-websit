@@ -55,7 +55,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(195, 212, 233, 0.4);
   z-index: 10;
-  width: 300px; /* Width for the car info dropdown */
+  width: 300px; 
   padding: 10px;
 }
 
@@ -209,10 +209,17 @@
  display: block;
 }
 
+.profile-avatar {
+  width: 45.6px;  
+  height: 45.6px; 
+  border-radius: 50%;  
+  object-fit: contain; 
+}
+
 .profile-icon {
- font-size: 18px;
- color: #333;
- cursor: pointer;
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
 }
 
 .auth-buttons {

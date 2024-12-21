@@ -1,102 +1,151 @@
 .comment-section {
-    background-color: #f8f9fa;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 1440px;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
-    margin-top: -120px;
-  }
-  
-  .comment-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .review-count {
-    background-color: #3b82f6;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    margin-left: 10px;
-  }
-  
-  .comments {
-    margin-top: 20px;
-  }
-  
-  .comment-card {
-    background-color: transparent;
+  background-color: #ffffff; /* Đổi màu nền thành trắng */
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 1200px;
+  margin: 20px auto;
+  font-family: 'Roboto', sans-serif; /* Thay đổi font chữ */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Thêm shadow để nổi bật */
+}
 
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: -15px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .comment-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 15px;
-  }
-  
-  .name {
-    font-size: 1rem;
-    font-weight: bold;
-  }
-  
-  .position {
-    font-size: 0.9rem;
-    color: #666;
-  }
-  
-  .comment-text {
-    font-size: 0.95rem;
-    margin-bottom: 10px;
-  }
-  
-  .comment-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .date {
-    font-size: 0.85rem;
-    color: #999;
-  }
-  
-  .rating {
-    color: #fbbf24;
-  }
-  
-  .star {
-    font-size: 1rem;
-    color: #ddd;
-  }
-  
-  .star.filled {
-    color: #fbbf24;
-  }
-  
-  .show-all-button {
-    background-color: transparent;
-    color: #3b82f6;
-    border: none;
-    cursor: pointer;
-    font-size: 0.9rem;
-    margin-top: 10px;
-  }
-  
+.comment-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  color: #333;
+}
+
+.review-count {
+  background-color: #2563eb; /* Sử dụng tông màu xanh đậm hơn */
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 1rem;
+  margin-left: 12px;
+}
+
+.comments {
+  margin-top: 25px;
+}
+
+.comment-card {
+  background-color: #f9fafb; /* Đổi màu nền thành xám nhạt */
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e5e7eb; /* Thêm viền nhẹ */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.comment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover; /* Đảm bảo ảnh không bị méo */
+  border: 2px solid #ddd;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #111;
+}
+
+.position {
+  font-size: 1rem;
+  color: #555;
+}
+
+.comment-text {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  color: #444;
+}
+
+.comment-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.rating {
+  color: #fbbf24;
+}
+
+.star {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+.star.filled {
+  color: #fbbf24;
+}
+
+.show-all-button {
+  background-color: transparent;
+  color: #2563eb;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 15px;
+  transition: color 0.2s;
+}
+
+.show-all-button:hover {
+  color: #174ea6;
+}
+
+textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  resize: none;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+button {
+  background-color: #2563eb;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  background-color: #174ea6;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

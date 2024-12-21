@@ -11,6 +11,7 @@ import RegisterPage from "./Register";
 import RentCarPage from "./RentCar";
 import AdminPage from "./AdminDashBoard";
 import CarList from "../component/CarList";
+import Profile from "../component/Profile";
 
 function Layout() {
   return (
@@ -27,6 +28,7 @@ function Layout() {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/rent-car" element={<RentCarPage />} />
           <Route path="/admin" element={<AdminPage />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </main>
 

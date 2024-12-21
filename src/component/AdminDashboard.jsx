@@ -58,7 +58,7 @@ const AdminDashboard = ({ setShowFormSection }) => {
           {popularCarData.length > 0 ? (
             <div className="rental-card1">
               <img
-                src={popularCarData[0].img}
+                src={popularCarData[0].img.main}
                 alt={popularCarData[0].name}
                 className="car-image"
               />
@@ -97,7 +97,7 @@ const AdminDashboard = ({ setShowFormSection }) => {
         <ul>
           {popularCarData.slice(0, 4).map((car) => (
             <li key={car.id} className="transaction-item">
-              <img src={car.img} alt={car.name} />
+              <img src={car.img.main} alt={car.name} />
               <div>
                 <h4>{car.name}</h4>
                 <p>{car.type}</p>

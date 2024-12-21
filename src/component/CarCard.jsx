@@ -37,7 +37,7 @@ const CarCard = ({
         </span>
       </div>
       <div className="car-image">
-        <img src={img} alt={name} />
+        <img src={img?.main} alt={name} />
       </div>
       <div className="car-details">
         <div className="detail">

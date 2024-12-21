@@ -6,40 +6,41 @@ const DetailCar = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [car, setCar] = useState(null);
+  const [mainImage, setMainImage] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const getDataById = (id) => {
-    console.log(`Fetching car with ID: ${id}`);
-    fetch(`https://675bd7cb9ce247eb1937944f.mockapi.io/cars/${id}`)
-      .then((response) => {
-        console.log("Response status:", response.status);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log("Car data fetched:", data);
-        setCar(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Error fetching car data:", err);
-        setError("Car not found or error occurred.");
-        setLoading(false);
-      });
+  const getDataById = async (id) => {
+    try {
+      const response = await fetch(
+        `https://675bd7cb9ce247eb1937944f.mockapi.io/cars/${id}`
+      );
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      setCar(data);
+      setMainImage(data?.img?.main || "https://via.placeholder.com/300");
+      setLoading(false);
+    } catch (err) {
+      console.error(err);
+      setError("Car not found or error occurred.");
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
     if (id) {
       getDataById(id);
     } else {
-      console.error("Car ID is undefined");
       setError("Invalid car ID.");
       setLoading(false);
     }
   }, [id]);
+
+  const handleThumbnailClick = (img) => {
+    setMainImage(img);
+  };
 
   const handleRentNow = () => {
     if (car) {
@@ -57,61 +58,49 @@ const DetailCar = () => {
     return <div>{error}</div>;
   }
 
-  if (!car) {
-    return <h2>Car not found</h2>;
-  }
-
   return (
     <div className="detail-container">
       <div className="detail-left">
         <div className="main-image-container">
-          <img src={car.img} alt={car.name} className="main-image" />
+          <img
+            src={mainImage}
+            alt={car?.name || "Car"}
+            className="main-image"
+          />
         </div>
         <div className="thumbnail-container">
-          <img src={car.img} alt={car.name} className="thumbnail" />
-          <img src={car.img} alt={car.name} className="thumbnail" />
-          <img src={car.img} alt={car.name} className="thumbnail" />
+          {car?.thumbnails?.length > 0 ? (
+            car.thumbnails.map((thumbnail, index) => (
+              <img
+                key={index}
+                src={thumbnail}
+                alt={`Thumbnail ${index + 1}`}
+                className="thumbnail"
+                onClick={() => handleThumbnailClick(thumbnail)}
+              />
+            ))
+          ) : (
+            <p>No thumbnails available.</p>
+          )}
         </div>
       </div>
-
       <div className="detail-right">
-        <div className="header1">
-          <h2>{car.name}</h2>
-          <i className="fas fa-heart favorite-icon"></i>
-        </div>
-        <div className="rating">
-          {[...Array(5)].map((_, i) => (
-            <i
-              key={i}
-              className={`fas fa-star ${
-                i < car.rating ? "star-icon" : "star-icon inactive"
-              }`}
-            ></i>
-          ))}
-          <span>{car.reviewer} Reviewer</span>
-        </div>
-        <p className="description">{car.description}</p>
-        <div className="car-details">
-          <p>
-            Type Car: <span>{car.type}</span>
-          </p>
-          <p>
-            Capacity: <span>{car.capacity}</span>
-          </p>
-        </div>
-        <div className="car-details">
-          <p>
-            Steering: <span>{car.transmission}</span>
-          </p>
-          <p style={{ marginRight: "37px" }}>
-            Gasoline: <span>{car.fuel}</span>
-          </p>
-        </div>
+        <h2>{car?.name || "Unknown Car"}</h2>
+        <p className="description">{car?.description || "No description."}</p>
+        <p>
+          Type Car: <span>{car?.type || "N/A"}</span>
+        </p>
+        <p>
+          Capacity: <span>{car?.capacity || "N/A"}</span>
+        </p>
+        <p>
+          Steering: <span>{car?.transmission || "N/A"}</span>
+        </p>
+        <p>
+          Gasoline: <span>{car?.fuel || "N/A"}</span>
+        </p>
         <div className="price-container">
-          <div>
-            <span className="price">{car.price}</span>
-            <span className="original-price">{car.originalPrice}</span>
-          </div>
+          <span className="price">{car?.price || "N/A"}</span>
           <button className="btn-rent" onClick={handleRentNow}>
             Rent Now
           </button>

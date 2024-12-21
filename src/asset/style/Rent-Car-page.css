@@ -1,76 +1,146 @@
 .car-rent-page {
-    padding: 20px;
-    max-width:1000px;
-    width: 100%;
-    margin: 0 auto;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-   
+  padding: 20px;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.car-rent-page h2 {
+  text-align: center;
+  color: #4e89ff;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #4e89ff;
+  font-size: 14px;
+}
+
+.form-group input {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #4e89ff;
+  box-shadow: 0 0 5px rgba(78, 137, 255, 0.5);
+}
+
+.thumbnail-input {
+  display: flex;
+  gap: 10px;
+}
+
+.thumbnail-input input {
+  flex: 1;
+}
+
+button {
+  padding: 14px 20px;
+  background-color: #4e89ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #3b6bbf;
+  transform: scale(1.02);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.form-button{
+  display: flex;
+  justify-content: space-around;
+  gap: 60px;
+}
+
+button.active {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.category-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.category-buttons button {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  text-align: center;
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.category-buttons button:hover {
+  background-color: #e0e0e0;
+}
+
+.category-buttons button.active {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .car-rent-page {
+    padding: 15px;
   }
-  
-  .car-rent-page h2 {
-    text-align: center;
-    color: #4e89ff;
-    margin-bottom: 20px;
-    font-size: 24px;
-  }
-  
+
   form {
-    display: flex;
-    flex-direction: column;
     gap: 15px;
   }
-  
-  .form-group {
-    display: flex;
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  button {
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+
+  .category-buttons {
     flex-direction: column;
   }
-  
-  .form-group label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #333;
+
+  .category-buttons button {
+    flex: unset;
+    width: 100%;
   }
-  
-  .form-group input {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    transition: border-color 0.3s;
-  }
-  
-  .form-group input:focus {
-    border-color: #4e89ff;
-  }
-  
-  button {
-    padding: 12px 20px;
-    background-color: #4e89ff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #3b6bbf;
-  }
-  
-  @media (max-width: 768px) {
-    .car-rent-page {
-      padding: 15px;
-    }
-  
-    form {
-      gap: 10px;
-    }
-  
-    button {
-      padding: 10px 18px;
-    }
-  }
-  
+}

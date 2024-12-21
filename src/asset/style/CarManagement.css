@@ -1,96 +1,107 @@
+.car-management {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-  .car-management {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .car-management h2 {
-    color: #2c3e50;
-    font-size: 24px;
-  }
-  
-  .car-list {
-    margin-top: 20px;
-  }
-  
-  .car-list ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .car-list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ecf0f1;
-    padding-bottom: 10px;
-  }
-  
-  .car-list img {
-    width: 100px;
-    height: 70px;
-    object-fit: cover;
-  }
-  
-  .car-list h4 {
-    font-size: 18px;
-    color: #2c3e50;
-  }
-  
-  .car-list p {
-    color: #7f8c8d;
-  }
-  
-  button {
-    padding: 8px 15px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #2980b9;
-  }
-  
-  button:disabled {
-    background-color: #bdc3c7;
-    cursor: not-allowed;
-  }
-  
-  /* Edit Car Form */
-  .edit-car-form {
-    background-color: #ecf0f1;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .edit-car-form h3 {
-    font-size: 22px;
-    color: #2c3e50;
-  }
-  
-  .edit-car-form input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border: 1px solid #bdc3c7;
-    border-radius: 4px;
-  }
-  
-  .edit-car-form button {
-    margin-top: 20px;
-    background-color: #2ecc71;
-    border-radius: 4px;
-  }
-  
-  .edit-car-form button:hover {
-    background-color: #27ae60;
-  }
-  
+.car-management h2 {
+  color: #2c3e50;
+  font-size: 24px;
+  text-align: center;
+}
+
+.car-list {
+  margin-top: 20px;
+}
+
+.car-list ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.car-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.car-list img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.car-list h4 {
+  font-size: 18px;
+  color: #2c3e50;
+  text-align: center;
+  cursor: pointer;
+}
+
+.car-list h4:hover {
+  text-decoration: underline;
+}
+
+.car-list p {
+  color: #7f8c8d;
+  margin: 5px 0;
+  text-align: center;
+}
+
+button {
+  padding: 8px 15px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* Pagination Buttons */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.pagination button {
+  padding: 10px 15px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #2980b9;
+}
+
+.pagination .active {
+  background-color: #2ecc71;
+  color: white;
+}

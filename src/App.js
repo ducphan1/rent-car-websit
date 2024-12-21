@@ -11,6 +11,7 @@ import LoginPage from "./pages/Login.jsx";
 import RegisterPage from "./pages/Register.jsx";
 import RentCarPage from "./pages/RentCar.jsx";
 import AdminPage from "./pages/AdminDashBoard.jsx";
+import Profile from "./component/Profile.jsx";
 
 const ProtectedRoute = ({ role, requiredRole, children }) => {
   if (role !== requiredRole) {
@@ -58,6 +59,7 @@ export default function App() {
           <Route path="login" element={<LoginPage />} />
           <Route path="register" element={<RegisterPage />} />
           <Route path="rent-car" element={<RentCarPage />} />
+          <Route path="profile" element={<Profile />} />
 
           <Route
             path="admin"

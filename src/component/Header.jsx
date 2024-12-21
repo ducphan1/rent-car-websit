@@ -8,18 +8,34 @@ const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [avatar, setAvatar] = useState(""); // State để lưu avatar
   const navigate = useNavigate();
 
   useEffect(() => {
     const user = localStorage.getItem("user");
     if (user) {
-      setLoggedInUser(JSON.parse(user));
+      const userData = JSON.parse(user);
+      setLoggedInUser(userData);
+      fetchAvatar(userData.id); // Lấy avatar từ API
     }
   }, []);
+
+  const fetchAvatar = async (userId) => {
+    try {
+      const response = await fetch(
+        `https://675bd7cb9ce247eb1937944f.mockapi.io/user/${userId}`
+      );
+      const data = await response.json();
+      setAvatar(data.avatar); // Cập nhật avatar từ API
+    } catch (error) {
+      console.error("Error fetching user avatar:", error);
+    }
+  };
 
   const handleLogout = () => {
     localStorage.removeItem("user");
     setLoggedInUser(null);
+    setAvatar(""); // Reset avatar khi logout
     navigate("/");
   };
 
@@ -128,7 +144,19 @@ const Header = () => {
           <div className="notification-wrapper">
             <i className="fas fa-bell bell-icon" aria-label="Notification"></i>
             <div className="dropdown-user">
-              <i className="fas fa-user profile-icon" aria-label="Profile"></i>
+              {/* Thay icon người dùng bằng ảnh avatar */}
+              {avatar ? (
+                <img
+                  src={avatar}
+                  alt="User Avatar"
+                  className="profile-avatar"
+                />
+              ) : (
+                <i
+                  className="fas fa-user profile-icon"
+                  aria-label="Profile"
+                ></i>
+              )}
               <div className="dropdown-user-content">
                 {loggedInUser.role === "admin" && <a href="/admin">Admin</a>}
                 <a href="/profile">Trang cá nhân</a>
