@@ -43,9 +43,10 @@
 .car-image img {
   width: 200px;
   height: 100px;
-  object-fit: contain;
+  object-fit: fill;
   margin-top: -20px;
   margin-left: -55px;
+  border-radius: 15px;
 }
 
 .car-details {
@@ -124,4 +125,16 @@
 .pagination button:hover {
   background-color: #0056b3;
   color: #fff;
+}
+
+@media only screen and (max-width: 576px) {
+  .myshop .form-section{
+    margin-left: 240px;
+  }
+
+  .myshop .recommendation-cars{
+    display: none;
+  }
+
+
 }

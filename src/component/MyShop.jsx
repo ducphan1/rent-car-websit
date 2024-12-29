@@ -3,7 +3,7 @@ import CarCard from "./CarCard";
 import Filter from "../component/filter";
 import "../asset/style/MyShop.css";
 
-const ITEMS_PER_PAGE = 8;
+const ITEMS_PER_PAGE = 4;
 const POPULAR_ITEMS_PER_PAGE = 4;
 
 const MyShop = () => {
@@ -13,12 +13,12 @@ const MyShop = () => {
   const [filteredRecommendationCars, setFilteredRecommendationCars] = useState(
     []
   );
-  const [currentPage, setCurrentPage] = useState(1);
-
+  const [currentPageRecommendation, setCurrentPageRecommendation] = useState(1);
   useEffect(() => {
     fetch("https://675bd7cb9ce247eb1937944f.mockapi.io/cars")
       .then((response) => response.json())
       .then((data) => {
+        console.log("Fetched cars:", data);
         const popular = data.filter((car) => car.category === "popularCars");
         const recommended = data.filter(
           (car) => car.category === "recommendationCars"
@@ -35,10 +35,10 @@ const MyShop = () => {
       });
   }, []);
 
-  const paginate = (cars, itemsPerPage) => {
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = currentPage * itemsPerPage;
-    return cars.slice(startIndex, endIndex);
+  const paginateRecommendationCars = () => {
+    const startIndex = (currentPageRecommendation - 1) * ITEMS_PER_PAGE;
+    const endIndex = currentPageRecommendation * ITEMS_PER_PAGE;
+    return filteredRecommendationCars.slice(startIndex, endIndex);
   };
 
   const totalRecommendationPages = Math.ceil(
@@ -47,7 +47,7 @@ const MyShop = () => {
 
   const handleFilterChange = (filteredCars) => {
     setFilteredRecommendationCars(filteredCars);
-    setCurrentPage(1);
+    setCurrentPageRecommendation(1);
   };
 
   return (
@@ -64,7 +64,7 @@ const MyShop = () => {
           <section className="popular-cars">
             <h2>Popular Cars</h2>
             <div className="car-grid">
-              {paginate(popularCars, POPULAR_ITEMS_PER_PAGE).map((car) => (
+              {popularCars.map((car) => (
                 <div key={car.id}>
                   <CarCard {...car} />
                 </div>
@@ -75,21 +75,21 @@ const MyShop = () => {
           <section className="recommendation-cars">
             <h2 className="recom">Recommendation Cars</h2>
             <div className="car-grid1">
-              {paginate(filteredRecommendationCars, ITEMS_PER_PAGE).map(
-                (car) => (
-                  <div key={car.id}>
-                    <CarCard {...car} />
-                  </div>
-                )
-              )}
+              {paginateRecommendationCars().map((car) => (
+                <div key={car.id}>
+                  <CarCard {...car} />
+                </div>
+              ))}
             </div>
 
             <div className="pagination">
               {Array.from({ length: totalRecommendationPages }, (_, index) => (
                 <button
                   key={index}
-                  className={currentPage === index + 1 ? "active" : ""}
-                  onClick={() => setCurrentPage(index + 1)}
+                  className={
+                    currentPageRecommendation === index + 1 ? "active" : ""
+                  }
+                  onClick={() => setCurrentPageRecommendation(index + 1)}
                 >
                   {index + 1}
                 </button>

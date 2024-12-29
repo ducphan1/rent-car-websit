@@ -346,19 +346,19 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
 }
 
 .transaction-item {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0px;
 }
 
 .transaction-item img {
     width: 80px;
     height: 80px;
-    object-fit: contain;
+    object-fit: fill;
     border-radius: 5px;
 }
 

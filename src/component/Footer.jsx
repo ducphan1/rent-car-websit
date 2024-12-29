@@ -3,7 +3,7 @@ import "../asset/style/Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <div className="footer">
       <div className="footer-top">
         <div className="footer-logo">
           <h2>MORENT</h2>
@@ -49,7 +49,7 @@ const Footer = () => {
           <span>Terms & Condition</span>
         </div>
       </div>
-    </footer>
+    </div>
   );
 };
 

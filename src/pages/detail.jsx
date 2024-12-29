@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./style/detail.module.css";
+import "./style/detail.css";
 
 import DetailCar from "../component/DetailCar";
 import CommentSection from "../component/Comment";

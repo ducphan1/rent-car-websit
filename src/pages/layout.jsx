@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation, useParams } from "react-router-dom";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import Home from "./Home";
@@ -14,8 +14,18 @@ import CarList from "../component/CarList";
 import Profile from "../component/Profile";
 
 function Layout() {
+  const location = useLocation();
+  const { id } = useParams();
+
+  const noFooterRoutes = ["/admin", "/profile", "/login", "/register"];
+  const isNoFooterPage = noFooterRoutes.includes(location.pathname);
+
+  const isDetailPage = location.pathname.startsWith("/detail/");
+
+  const isHeaderPage = location.pathname === "/";
+
   return (
-    <div>
+    <div className="layout-container">
       <Header onSearch={(term) => console.log(term)} />
       <main>
         <Routes>
@@ -32,7 +42,9 @@ function Layout() {
         </Routes>
       </main>
 
-      <Footer />
+      {!isNoFooterPage && !isDetailPage && (
+        <Footer className={isHeaderPage ? "footer-header" : "footer-default"} />
+      )}
     </div>
   );
 }

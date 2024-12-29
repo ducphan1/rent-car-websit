@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import RentCarPage from "./RentCarPage";
 import CarManagement from "./CarManagement";
+import UserManagement from "./UserManamentAdmin";
+import RentCarInfo from "./RentCarInfo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCar,
   faUsers,
   faChartPie,
-  faGasPump,
   faInbox,
   faCalendar,
   faCog,
@@ -16,10 +16,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import "../asset/style/AdminDashboard.css";
+import RentCar from "./RentCar";
+import RentCarPage from "./RentCarPage";
 
 const AdminDashboard = ({ setShowFormSection }) => {
   const [popularCarData, setPopularCarData] = useState([]);
   const [activePage, setActivePage] = useState("dashboard");
+  const [rentalData, setRentalData] = useState([]);
 
   useEffect(() => {
     const fetchCarData = async () => {
@@ -35,6 +38,11 @@ const AdminDashboard = ({ setShowFormSection }) => {
 
     fetchCarData();
   }, []);
+
+  const handleAddRental = (rental) => {
+    console.log("Rental data received in AdminDashboard:", rental);
+    setRentalData((prev) => [...prev, rental]);
+  };
 
   const DashboardPage = () => (
     <div className="main-content">
@@ -126,15 +134,16 @@ const AdminDashboard = ({ setShowFormSection }) => {
               Dashboard
             </li>
             <li
-              className={activePage === "carRent" ? "active" : ""}
+              className={activePage === "carRenPage" ? "active" : ""}
               onClick={() => {
-                setActivePage("carRent");
+                setActivePage("carRenPage");
                 setShowFormSection(false);
               }}
             >
               <FontAwesomeIcon icon={faCar} className="menu-icon" />
               Car Rent
             </li>
+
             <li
               className={activePage === "carManagement" ? "active" : ""}
               onClick={() => {
@@ -145,13 +154,25 @@ const AdminDashboard = ({ setShowFormSection }) => {
               <FontAwesomeIcon icon={faCar} className="menu-icon" />
               Car Management
             </li>
-            <li>
+            <li
+              className={activePage === "userManagement" ? "active" : ""}
+              onClick={() => {
+                setActivePage("userManagement");
+                setShowFormSection(false);
+              }}
+            >
               <FontAwesomeIcon icon={faUsers} className="menu-icon" />
-              Insight
+              User Management
             </li>
-            <li>
-              <FontAwesomeIcon icon={faGasPump} className="menu-icon" />
-              Reimburse
+            <li
+              className={activePage === "rentcarInfo" ? "active" : ""}
+              onClick={() => {
+                setActivePage("rentcarInfo");
+                setShowFormSection(false);
+              }}
+            >
+              <FontAwesomeIcon icon={faUsers} className="menu-icon" />
+              Rentcar-info
             </li>
             <li>
               <FontAwesomeIcon icon={faInbox} className="menu-icon" />
@@ -186,13 +207,19 @@ const AdminDashboard = ({ setShowFormSection }) => {
         </button>
       </aside>
       <main className="main-content">
-        {activePage === "carRent" ? (
+        {activePage === "carRenPage" ? (
           <RentCarPage />
+        ) : activePage === "carRent" ? (
+          <RentCar onAddRental={handleAddRental} />
         ) : activePage === "carManagement" ? (
           <CarManagement />
-        ) : (
+        ) : activePage === "userManagement" ? (
+          <UserManagement />
+        ) : activePage === "rentcarInfo" ? (
+          <RentCarInfo rentalData={rentalData} />
+        ) : activePage === "dashboard" ? (
           <DashboardPage />
-        )}
+        ) : null}
       </main>
     </div>
   );

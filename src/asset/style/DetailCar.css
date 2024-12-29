@@ -1,5 +1,3 @@
-
-
 .detail-container {
     display: flex;
     gap: 40px;
@@ -12,7 +10,6 @@
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
-
 .detail-left {
     flex: 1.2;
     display: flex;
@@ -22,42 +19,32 @@
 }
 
 .main-image {
-    width: 350px;
-    height: 200px;
+    width: 400px; 
+    height: 250px;
     background-color: transparent;
-    margin-bottom: 20px;
-    object-fit: contain;
+    margin-bottom: 10px;
+    object-fit: fill;
+    border-radius: 15px;
+    margin-top: -20px;
 }
-
-
-
-
 
 .thumbnail-container {
     display: flex;
-    width: 148px;
-    height: 124px;
-    gap: 15px;
+    width: 180px; 
+    height: 150px;
+    gap: 20px; 
     justify-content: center;
     margin-top: 10px;
 }
 
 .thumbnail {
-    width: 148px;
-    height: 124px;
-    width: 90px;
-    height: 60px;
-    object-fit: cover;
+    width: 120px; 
+    height: 80px; 
+    object-fit: fill;
     border-radius: 8px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 2px solid transparent;
-}
-
-img.thumbnail {
-    width: 148px;
-    height: 124px;
-    object-fit: contain;
 }
 
 .thumbnail:hover {
@@ -65,40 +52,56 @@ img.thumbnail {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     border-color: #007bff;
 }
-
-
 .detail-right {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 492px;
-    height: 300px;
+    justify-content: flex-start;
+    gap: 15px;
+    width: 100%;
+    padding: 10px;
+    font-family: Arial, sans-serif;
 }
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px; 
+    margin-top: 10px;
+    padding: 0;
+}
+
+.details-grid p {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+}
+
+.details-grid strong {
+    font-weight: bold;
+    color: #007bff;
+}
+
 
 .header1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: transparent;
- 
 }
 
-
-
 .header1 h2 {
-    font-size: 32px;
-    font-weight: 700;
+    font-size: 24px;
+    font-weight: bold;
     color: #333;
     margin: 0;
 }
 
 .favorite-icon {
-    font-size: 28px;
+    font-size: 20px;
     color: #ff5a5f;
     cursor: pointer;
     transition: transform 0.2s ease;
-    
 }
 
 .favorite-icon:hover {
@@ -106,80 +109,66 @@ img.thumbnail {
 }
 
 .rating {
-    font-size: 16px;
+    font-size: 14px;
     color: #555;
-    margin: 15px 0;
     display: flex;
     align-items: center;
-    gap: 6px;
-}
-
-.star-icon {
-    color: #ffc107;
-}
-
-.star-icon.inactive {
-    color: #ddd;
-}
-
-.rating span {
-    font-size: 14px;
-    color: #777;
+    gap: 5px;
+    margin-top: 20px;
 }
 
 .description {
-    font-size: 18px;
-    color: #444;
-    margin-bottom: 0px;
-    line-height: 1.6;
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    margin-top: -20px;
     font-style: italic;
 }
 
+.details-grid{
+    margin-top: 40px;
+}
 
 .car-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 10px;
     background: transparent;
-    border-radius: 10px;
-    padding: 0px;
+    padding: 0;
 }
 
 .car-details p {
-
-    font-size: 16px;
     display: flex;
-margin-top: -10px;
+    flex-direction: column;
+    font-size: 14px;
     color: #333;
-}
-
-
-
-.detail-icon {
-    font-size: 22px;
-    color: #007bff;
+    margin: 0;
 }
 
 .car-details span {
-    font-weight: 600;
-    color: #555;
-    text-align: left;
-    margin-right: 10px;
+    font-weight: bold;
+    color: #007bff;
 }
-
 
 .price-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 0px;
+    margin-top: 20px;
+    align-items: center;
 }
 
 .price {
-    font-size: 28px;
+   
+    font-size: 20px;
     font-weight: bold;
     color: #007bff;
 }
 
 .original-price {
-    font-size: 18px;
+    font-size: 14px;
     color: #bbb;
     text-decoration: line-through;
     margin-left: 10px;
@@ -189,13 +178,16 @@ margin-top: -10px;
     background-color: #007bff;
     color: white;
     border: none;
-    padding: 12px 30px;
-    border-radius: 12px;
-    font-size: 16px;
-    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
     cursor: pointer;
+    text-align: center;
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+    margin-right: 160px;
+    margin-top: -5px;
 }
 
 .btn-rent:hover {
@@ -210,61 +202,63 @@ margin-top: -10px;
 @media only screen and (max-width: 576px) {
     .detail-container {
         flex-direction: column;
-        align-items: center; 
-        width: 100%; 
+        align-items: center;
+        width: 100%;
         height: auto;
         padding: 10px;
         gap: 20px;
     }
 
     .detail-left {
-        width: 100%; 
+        width: 100%;
         align-items: center;
         margin-top: 20px;
     }
 
     .main-image {
-        width: 90%;
-        height: auto; 
+        margin-top: -60px;
+        margin-left: 7px;
+        width: 80%;
+        height: auto;
     }
 
     .thumbnail-container {
-        flex-wrap: wrap; 
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
         justify-content: center;
-        gap: 10px; 
-        width: 100%;
+        margin-left: -260px;
+        gap: 10px;
+        width: 70px;
+        height: 60px;
     }
 
     .thumbnail {
-        width: 80px; 
-        height: 50px;
-    }
-
-    img.thumbnail {
         width: 80px;
         height: 50px;
     }
 
     .detail-right {
-        width: 80%; 
-        height: auto; 
+        width: 80%;
+        height: auto;
+        text-align: left;
         padding: 10px;
         font-size: 14px;
         margin-left: -10px;
     }
 
     .header1 h2 {
-        font-size: 24px; 
+        font-size: 24px;
     }
 
     .favorite-icon {
-        font-size: 20px; 
+        font-size: 20px;
         margin-right: 25px;
     }
 
     .rating {
         font-size: 14px;
-        gap: 4px; 
+        gap: 4px;
     }
 
     .description {
@@ -272,21 +266,21 @@ margin-top: -10px;
         line-height: 1.4;
     }
 
-    .car-details{
+    .car-details {
         width: 100%;
         max-width: 400px;
     }
 
     .car-details p {
         font-size: 14px;
-        
         margin-top: 0;
     }
 
     .price-container {
-        flex-direction: column; 
+        flex-direction: column;
         align-items: flex-start;
         gap: 10px;
+        width: 88%;
     }
 
     .price {
@@ -299,9 +293,8 @@ margin-top: -10px;
 
     .btn-rent {
         font-size: 14px;
-        padding: 8px 20px; 
+        padding: 8px 20px;
         width: 100%;
         text-align: center;
     }
-
 }

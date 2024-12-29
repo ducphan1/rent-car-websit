@@ -57,7 +57,7 @@ const CommentSection = () => {
 
   return (
     <div className="comment-section">
-      <h2>Comments ({comments.length})</h2>
+      <h2 style={{ textAlign: "left" }}>Comments ({comments.length})</h2>
       {user ? (
         <div className="comment-form">
           <textarea

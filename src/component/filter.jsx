@@ -5,13 +5,13 @@ const Filter = ({ onFilterChange, recommendationCars }) => {
   const [selectedTypes, setSelectedTypes] = useState([]);
   const [selectedCapacities, setSelectedCapacities] = useState([]);
   const [selectedFuels, setSelectedFuels] = useState([]);
-  const [price, setPrice] = useState(1000);
+  const [price, setPrice] = useState(300);
   const [typeCounts, setTypeCounts] = useState({});
   const [capacityCounts, setCapacityCounts] = useState({});
   const [fuelCounts, setFuelCounts] = useState({});
   useEffect(() => {
     if (recommendationCars && recommendationCars.length > 0) {
-      filterCars([], [], [], 1000);
+      filterCars([], [], [], 300);
     }
   }, [recommendationCars]);
 
@@ -77,7 +77,7 @@ const Filter = ({ onFilterChange, recommendationCars }) => {
       const isFuelMatch =
         fuels.length === 0 ||
         fuels.some((fuel) => parseInt(fuel) >= parseInt(car.fuel));
-      const isPriceMatch = car.price <= maxPrice;
+      const isPriceMatch = parseInt(car.price) <= parseInt(maxPrice);
 
       return isTypeMatch && isCapacityMatch && isFuelMatch && isPriceMatch;
     });
@@ -108,7 +108,7 @@ const Filter = ({ onFilterChange, recommendationCars }) => {
 
       <div className="filter-section">
         <h4>Capacity</h4>
-        {["2 Person", "4 Person", "6 Person", "8 or More"].map(
+        {["2 Person", "4 Person", "7 Person", "8 or More"].map(
           (capacity, index) => (
             <div key={index} className="filter-item">
               <input
@@ -148,7 +148,7 @@ const Filter = ({ onFilterChange, recommendationCars }) => {
           <input
             type="range"
             min="0"
-            max="1000"
+            max="300"
             value={price}
             onChange={handlePriceChange}
           />

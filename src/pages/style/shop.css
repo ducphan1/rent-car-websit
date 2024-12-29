@@ -27,9 +27,15 @@ body{
 }
 .myshop .car-grid{
     width: auto;
-    
+    height: 400px;
 }
 
+.myshop section.popular-cars{
+    height: 400px;
+}
+.myshop .car-grid1{
+    height: 400px;
+}
 .myshop .recommendation-cars{
     width: 84%;
     
@@ -46,8 +52,12 @@ body{
     margin-left: 160px;
 }
 
-.myshop .car-list-container h2{
-    margin-left: 160px;
+.myshop .popular-cars h2{
+    margin-left: -790px;
+}
+
+.myshop .recommendation-cars h2{
+    margin-left: -610px;
 }
 
 .myshop .detail{
@@ -67,24 +77,32 @@ body{
 
     
     .myshop .form-container{
-        margin-left: -220px;
+        margin-left: -200px;
         width: 80%;
         margin-bottom: -20px;
     }
 
-    .myshop .car-list-container{
-        margin-left: -120px;
+    .myshop .car-list-container h2{
+        margin-left: 0px;
+        margin-bottom: 0px;
+        margin-top: 40px;
     }
 
-    .myshop .recommendation-cars h2{
-        text-wrap: nowrap;
-    }
+   .myshop .popular-cars{
+    margin-left: -270px;
+   }
 
-    .myshop .car-grid1{
-        width: 100%;
-        margin-left: -210px;
-    }
+   .myshop .car-grid{
+    width: 300px;
+   }
 
+   .myshop .car-card-header{
+    justify-content: space-around;
+   }
+
+   .myshop .car-card-footer{
+    justify-content: space-around;
+   }
     .myshop .show-more-btn{
         margin-left: 70px;
         text-wrap: nowrap;

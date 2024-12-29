@@ -1,0 +1,28 @@
+
+
+@media only screen and (max-width: 576px) {
+
+  .detail2 .car-list-container{
+    display: none;
+  }
+
+  .detail2 .comment-section{
+    position: absolute;
+  }
+
+  .detail2  .comment-section{
+      width: 70%;
+      margin-left: 15px;
+    }
+  
+  .detail2  .comment-form{
+      width: 90%;
+    }
+  
+  .detail2  .comment-section h2{
+      text-align: left;
+    }
+  
+  
+}
+

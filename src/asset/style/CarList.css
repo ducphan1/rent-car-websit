@@ -32,7 +32,7 @@
   margin-left: 150px;
   justify-content: space-between;
   width: 93%;
-  overflow-x: auto;
+  overflow-x: none;
   margin-top: 50px;
   text-wrap: nowrap;
 }
@@ -132,36 +132,51 @@
   .car-list-container {
     padding: 0 10px;
     margin-left: -105px;
+    display: flex;
+    flex-direction: column;
   }
 
   .car-grid {
     display: flex;
-    flex-wrap: nowrap;
+    flex-direction: column; 
     gap: 10px;
     overflow-x: hidden;
     padding-bottom: 10px;
     scroll-snap-type: x mandatory;
   }
 
-
+  .popular-cars{
+    margin-left: -20px;
+  }
+  .popular-cars h2{
+    margin-left:20px;
+  }
   .recommendation-cars .car-grid1 {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     gap: 20px;
-    width: 80%;
-    margin-left: -225px;
-
+    width: 280px;
+    overflow: hidden;
+    height: 313px;
+    margin-left: 135px;
     padding: 0 10px;
-  }
-
-  .recommendation-cars .car-card {
-    width: 100%;
-    max-width: 325px;
-    margin: 0 auto;
+    
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
+  .popular-cars .car-grid {
+    display: flex;
+    flex-direction: column; 
+
+  }
+  .popular-cars .car-card{
+    max-width: 290px;
+    width: 100%;
+  }
+.recommendation-cars {
+  display: none;
+}
+  
   .car-card .rental-btn {
     width: 100%;
     padding: 12px;
@@ -172,10 +187,21 @@
     position: absolute;
     display: flex;
     justify-content: center;
-
     margin-left: 310px;
   }
 
+  .recommendation-cars .car-card-header{
+    justify-content: space-around;
+    margin-left: -10px;
+  }
+
+  .recommendation-cars .car-details{
+    justify-content: space-around;
+  }
+
+  .recommendation-cars .car-card-footer{
+    justify-content: space-around;
+  }
   .view-all-btn {
     font-size: 14px;
   }

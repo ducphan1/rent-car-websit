@@ -37,8 +37,8 @@ const CarRentalAds = () => {
         >
           <img src={ad.imageSrc} alt="Car rental" className="adImage" />
           <div className="adContent">
-            <h2 className="adTitle">{ad.title}</h2>
-            <h2 className="adTitle1">{ad.title1}</h2>
+            <h2 className="adTitle-ren">{ad.title}</h2>
+            <h2 className="adTitle-ren1">{ad.title1}</h2>
             <p className="adDescription">{ad.description}</p>
             <p className="adDescription1">{ad.description1}</p>
             <button

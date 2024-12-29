@@ -1,18 +1,19 @@
 .footer {
     background-color: #fff;
-    position: absolute;
+
     width: 1440px;
     height: 300px;
     left: 0px;
-    top: 2000px;
+    
 }
 
 .footer-top {
     display: flex;
+    position: absolute;
     justify-content: space-between;
 
     padding-bottom: 20px;
-    margin-bottom: 20px;
+    margin-bottom: -300px;
 }
 
 .footer-logo {
@@ -108,8 +109,8 @@
 
     mix-blend-mode: normal;
 
-    margin-top: -20px;
-    top: 280px;
+    margin-top: 300px;
+  
     left: 150px;
 }
 
@@ -120,9 +121,9 @@
 
 .footer-policy {
     display: flex;
-    gap: 20px;
+    gap: 9px;
     position: absolute;
-    left: 930px;
+    left: 890px;
     white-space: nowrap;
 }
 
@@ -154,8 +155,9 @@
 @media only screen and (max-width: 576px) {
     .footer {
         display: flex;
-        position: absolute;
-        margin-top: 2600px;
+    
+        margin-top: 300px;
+        height: 400px;
     }
 
     .footer-logo {
@@ -196,12 +198,12 @@
       }
     
       .footer-bottom {
-        margin-top: 300px;
+        margin-top: 520px;
       }
 
       .footer-policy{
         position: absolute;
-        margin-left: -1050px;
+        margin-left: -1015px;
         margin-top: -150px;
       }
 

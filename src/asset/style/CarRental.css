@@ -34,8 +34,8 @@
     object-fit: cover;
 
     position: absolute;
-    margin-top: 180px;
-    margin-left: 220px;
+    margin-top: 190px;
+    margin-left: 150px;
 
 }
 
@@ -49,18 +49,20 @@
 }
 
 
-.adTitle {
+.adTitle-ren {
     font-size: 24px;
     font-weight: 600;
     line-height: 1.2;
     margin-top: 5px;
+    text-align: left;
 }
 
-.adTitle1 {
+.adTitle-ren1 {
     font-size: 24px;
     font-weight: 600;
     line-height: 1.2;
     margin-top: -10px;
+   text-align: left;
 }
 
 
@@ -105,13 +107,14 @@
         gap: 20px;
         height: 292px;
     }
+    
 
     .adCard {
-        width: 350px;
+        width: 360px;
         height: 202px;
         left: 35px;
         top: 172px;
-        margin-left: -130px;
+        margin-left: -145px;
     }
 
     .adTitle ,.adTitle1{
@@ -134,8 +137,8 @@
         margin-left: 125px;
     }
 
-    .adDescription p {
-        margin: 0;
+    .adDescription {
+        margin-top: -20px;
         padding: 0;
         line-height: 0.5;
     }
@@ -144,7 +147,7 @@
         margin: 0;
         padding: 0;
         line-height: 0.5;
-        margin-top: -180px;
+        margin-top: -150px;
     }
 
 

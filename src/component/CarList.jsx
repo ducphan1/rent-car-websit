@@ -7,7 +7,7 @@ const CarList = () => {
   const [loading, setLoading] = useState(true);
   const [popularCars, setPopularCars] = useState([]);
   const [recommendationCars, setRecommendationCars] = useState([]);
-  const [currentPagePopular] = useState(1);
+  const [currentPagePopular, setCurrentPagePopular] = useState(1);
   const [currentPageRecommendation, setCurrentPageRecommendation] = useState(1);
   const carsPerPagePopular = 4;
   const carsPerPageRecommendation = 8;
@@ -49,6 +49,14 @@ const CarList = () => {
     navigate(`/detail/${id}`);
   };
 
+  const handleNextPagePopular = () => {
+    setCurrentPagePopular(currentPagePopular + 1);
+  };
+
+  const handlePrevPagePopular = () => {
+    setCurrentPagePopular(currentPagePopular - 1);
+  };
+
   const handleNextPageRecommendation = () => {
     setCurrentPageRecommendation(currentPageRecommendation + 1);
   };
@@ -71,6 +79,23 @@ const CarList = () => {
                   <CarCard {...car} />
                 </div>
               ))}
+            </div>
+
+            <div className="pagination-controls">
+              <button
+                onClick={handlePrevPagePopular}
+                disabled={currentPagePopular === 1}
+              >
+                Previous
+              </button>
+              <button
+                onClick={handleNextPagePopular}
+                disabled={
+                  currentPagePopular * carsPerPagePopular >= popularCars.length
+                }
+              >
+                Next
+              </button>
             </div>
           </section>
 

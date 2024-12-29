@@ -36,7 +36,7 @@
 .car-list img {
   width: 150px;
   height: 100px;
-  object-fit: cover;
+  object-fit: fill;
   border-radius: 8px;
   margin-bottom: 10px;
 }
@@ -78,7 +78,7 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* Pagination Buttons */
+
 .pagination {
   display: flex;
   justify-content: center;

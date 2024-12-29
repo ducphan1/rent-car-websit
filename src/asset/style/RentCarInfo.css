@@ -1,0 +1,125 @@
+.rental-info-section {
+    padding: 20px;
+    background-color: #fff; 
+    font-family: Arial, sans-serif;
+  }
+  
+  .rental-info-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .rental-info-table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin-top: 20px;
+  }
+  
+  .rental-header {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+    grid-gap: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    text-transform: uppercase;
+  }
+  
+  .rental-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+    grid-gap: 10px;
+    padding: 10px;
+    align-items: center;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .rental-row:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .rental-row:hover {
+    background-color: #e2f7e2; 
+  }
+  
+  .rental-item {
+    padding: 6px 8px;
+    color: #333;
+    text-align: center;
+  }
+  
+  .rental-item img {
+    width: 70px; 
+    height: 70px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .rental-item strong {
+    color: #007bff;
+  }
+  .delete-selected-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .delete-selected-button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+  }
+  .rental-header input[type="checkbox"] {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  
+  .rental-header-second-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    text-transform: uppercase;
+  }
+  
+  .rental-row-second {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+    align-items: center;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .rental-item-second {
+    padding: 6px 8px;
+    color: #333;
+    text-align: center;
+  }
+  
+  .rental-item-second strong {
+    color: #007bff;
+  }
+  
+  .car-image {
+    display: block;
+    max-width: 100px;
+    max-height: 60px;
+    margin-top: 5px;
+  }

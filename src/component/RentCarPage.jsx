@@ -13,6 +13,7 @@ const RentCarPage = () => {
     category: "recommendationCars",
     img: { main: "" },
     thumbnails: ["", "", ""],
+    description: "",
   });
 
   const navigate = useNavigate();
@@ -193,6 +194,19 @@ const RentCarPage = () => {
             </button>
           </div>
         </div>
+
+        <div className="form-group">
+          <label htmlFor="description">Car Description:</label>
+          <textarea
+            id="description"
+            name="description"
+            value={carData.description}
+            onChange={handleChange}
+            rows="4"
+            required
+          />
+        </div>
+
         <button type="submit">Add Car</button>
       </form>
     </div>

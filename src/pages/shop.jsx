@@ -7,7 +7,6 @@ const Shop = () => {
   return (
     <div className="myshop">
       <FormSection />
-
       <MyShop />
     </div>
   );

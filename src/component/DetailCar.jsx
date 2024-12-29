@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStarHalfAlt, faStar } from "@fortawesome/free-solid-svg-icons";
 import "../asset/style/DetailCar.css";
 
 const DetailCar = () => {
@@ -85,22 +87,40 @@ const DetailCar = () => {
         </div>
       </div>
       <div className="detail-right">
-        <h2>{car?.name || "Unknown Car"}</h2>
+        <h2 className="car-name">
+          {car?.name || "Unknown Car"}
+          <div className="rating">
+            {[...Array(5)].map((_, index) => (
+              <FontAwesomeIcon
+                key={index}
+                icon={index < car?.rating ? faStar : faStarHalfAlt}
+                className="star-icon"
+              />
+            ))}
+          </div>
+        </h2>
         <p className="description">{car?.description || "No description."}</p>
-        <p>
-          Type Car: <span>{car?.type || "N/A"}</span>
-        </p>
-        <p>
-          Capacity: <span>{car?.capacity || "N/A"}</span>
-        </p>
-        <p>
-          Steering: <span>{car?.transmission || "N/A"}</span>
-        </p>
-        <p>
-          Gasoline: <span>{car?.fuel || "N/A"}</span>
-        </p>
+
+        <div className="details-grid">
+          <p>
+            <strong>Type Car:</strong> {car?.type || "N/A"}
+          </p>
+          <p>
+            <strong>Capacity:</strong> {car?.capacity || "N/A"}
+          </p>
+          <p>
+            <strong>Steering:</strong> {car?.transmission || "N/A"}
+          </p>
+          <p>
+            <strong>Fuel:</strong> {car?.fuel || "N/A"}
+          </p>
+        </div>
+
         <div className="price-container">
-          <span className="price">{car?.price || "N/A"}</span>
+          <div className="price-info">
+            <span className="price">{car?.price || "N/A"}</span>
+            <span className="price-per-day"></span>
+          </div>
           <button className="btn-rent" onClick={handleRentNow}>
             Rent Now
           </button>

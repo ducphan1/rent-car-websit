@@ -7,6 +7,7 @@ const RegisterForm = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
@@ -15,14 +16,44 @@ const RegisterForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const newUser = {
-      username: username,
-      email: email,
-      password: password,
-      role: "guest",
-    };
+    if (password !== confirmPassword) {
+      setErrorMessage("Mật khẩu và nhập lại mật khẩu không khớp.");
+      setSuccessMessage("");
+      return;
+    }
 
     try {
+      const usersResponse = await axios.get(
+        "https://675bd7cb9ce247eb1937944f.mockapi.io/user"
+      );
+      const existingUsers = usersResponse.data;
+
+      const isDuplicateUsername = existingUsers.some(
+        (user) => user.username === username
+      );
+      const isDuplicateEmail = existingUsers.some(
+        (user) => user.email === email
+      );
+
+      if (isDuplicateUsername) {
+        setErrorMessage("Tên tài khoản đã được sử dụng.");
+        setSuccessMessage("");
+        return;
+      }
+
+      if (isDuplicateEmail) {
+        setErrorMessage("Email đã được sử dụng.");
+        setSuccessMessage("");
+        return;
+      }
+
+      const newUser = {
+        username: username,
+        email: email,
+        password: password,
+        role: "guest",
+      };
+
       const response = await axios.post(
         "https://675bd7cb9ce247eb1937944f.mockapi.io/user",
         newUser
@@ -39,6 +70,7 @@ const RegisterForm = () => {
         setUsername("");
         setEmail("");
         setPassword("");
+        setConfirmPassword("");
       }
     } catch (error) {
       setErrorMessage("Đã xảy ra lỗi! Vui lòng thử lại.");
@@ -84,6 +116,17 @@ const RegisterForm = () => {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="auth-input-group">
+          <i className="fas fa-lock auth-icon"></i>
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
             required
           />
         </div>

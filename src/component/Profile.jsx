@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../asset/style/Profile.css";
+
 const Profile = () => {
   const [user, setUser] = useState(null);
   const [updatedName, setUpdatedName] = useState("");
@@ -9,10 +10,18 @@ const Profile = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (!storedUser) {
+      alert("Bạn chưa đăng nhập!");
+      navigate("/login");
+      return;
+    }
+
+    const { id } = JSON.parse(storedUser);
     const fetchUser = async () => {
       try {
         const response = await fetch(
-          "https://675bd7cb9ce247eb1937944f.mockapi.io/user/1"
+          `https://675bd7cb9ce247eb1937944f.mockapi.io/user/${id}`
         );
         const data = await response.json();
         setUser(data);
@@ -25,9 +34,11 @@ const Profile = () => {
     };
 
     fetchUser();
-  }, []);
+  }, [navigate]);
 
   const handleUpdateProfile = async () => {
+    if (!user) return;
+
     const updatedData = {
       name: updatedName,
       email: updatedEmail,
